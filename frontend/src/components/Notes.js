@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NoteContext from "../Context/notes/ContextNotes";
-import NoteItem from "./NoteItem";
+//import NoteItem from "./NoteItem";
+import NoteCard from "./NoteItem";
 import AddNote from "./addNote";
 import { Navigate } from "react-router-dom";
 function Notes(props) {
@@ -156,11 +157,11 @@ function Notes(props) {
           </div>
         </div>
       </div>
-      <div className="row my-3">
-        <h3>Notes</h3>
+      <div className="row my-3 mx-2">
+        <h3 className="mt-4">Notes</h3>
         {Array.isArray(notes) && notes.length > 0 ? (
           notes.map((note) => (
-            <NoteItem
+            <NoteCard
               key={note._id}
               updateNote={updateNote}
               note={note}
